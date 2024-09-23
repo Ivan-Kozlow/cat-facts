@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import '@/shared/styles/visually-hidden.scss'
 
 export const metadata: Metadata = {
 	title: 'Cat Facts',

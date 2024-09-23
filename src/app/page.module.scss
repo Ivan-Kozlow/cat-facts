@@ -1,9 +1,8 @@
-@import '../shared/styles/mixins.scss';
+@import '@styles/mixins.scss';
 
 .main {
 	background-color: #ada69c;
 	box-shadow: 0 0 10px 10px #ada69c;
-	height: 100vh;
 	max-width: 68vw;
 	padding: 10px;
 	padding-top: 70px;
@@ -22,4 +21,5 @@
 	color: #633a15;
 	font-size: 59px;
 	font-weight: 600;
+	margin-bottom: 40px;
 }

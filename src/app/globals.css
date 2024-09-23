@@ -31,10 +31,7 @@ body {
 	scroll-behavior: smooth;
 }
 html {
-	background-color: #ada69c;
-}
-body {
-	background: url('/cat_background.png') center center / 100px;
+	background: #ac9e8b url('/cat_background.png') center center / 100px;
 }
 input,
 select,

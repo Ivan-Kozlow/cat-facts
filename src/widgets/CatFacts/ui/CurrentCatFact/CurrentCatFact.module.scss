@@ -1,0 +1,36 @@
+@import '@styles/mixins.scss';
+
+.card {
+	display: flex;
+	flex-wrap: wrap;
+	background-color: transparent;
+	border-radius: 12px;
+	border: 1px solid #333;
+	overflow: hidden;
+
+	.button {
+		background-color: #f7f2f0;
+		border: 1px solid #333;
+		border-radius: 12px;
+		font-size: 14px;
+		padding: 4px 10px;
+		margin-top: auto;
+		transition: background-color 0.3s ease 0s;
+
+		&:hover,
+		&:focus {
+			background-color: #9c7464cc;
+		}
+	}
+
+	img {
+		height: auto;
+	}
+
+	@include media1200 {
+		img {
+			width: 200px;
+			// height: 130px;
+		}
+	}
+}
