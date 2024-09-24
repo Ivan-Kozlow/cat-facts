@@ -31,7 +31,7 @@ body {
 	scroll-behavior: smooth;
 }
 html {
-	background: #ac9e8b url('/cat_background.png') center center / 100px;
+	background: #ac9e8b url('/background/cat_background.jpg') center center / 100px;
 }
 input,
 select,

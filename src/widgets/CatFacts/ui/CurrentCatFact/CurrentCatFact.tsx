@@ -11,7 +11,7 @@ export function CurrentCatFact() {
 				<CatFactCard body={'Привет'} className={styles.card}>
 					<button className={styles.button}>Regenerate</button>
 				</CatFactCard>
-				<Image src='/cat_random_fact.png' alt='cat' width={300} height={230} />
+				<Image src='/background/cat_random_fact.jpg' alt='Cat' width={300} height={230} />
 			</div>
 		</section>
 	)

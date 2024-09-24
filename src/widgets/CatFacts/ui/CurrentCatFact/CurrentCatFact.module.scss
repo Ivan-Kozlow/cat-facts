@@ -18,7 +18,7 @@
 		transition: background-color 0.3s ease 0s;
 
 		&:hover,
-		&:focus {
+		&:focus-visible {
 			background-color: #9c7464cc;
 		}
 	}
@@ -30,7 +30,6 @@
 	@include media1200 {
 		img {
 			width: 200px;
-			// height: 130px;
 		}
 	}
 }
