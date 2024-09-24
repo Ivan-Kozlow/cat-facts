@@ -1,7 +1,7 @@
 import styles from './CurrentCatFact.module.scss'
 import Image from 'next/image'
 
-import { CatFactCard } from '../CatFactCard/CatFactCard'
+import { CatFactCard } from '@/entities/CatFactCard/ui/CatFactCard/CatFactCard'
 
 export function CurrentCatFact() {
 	return (

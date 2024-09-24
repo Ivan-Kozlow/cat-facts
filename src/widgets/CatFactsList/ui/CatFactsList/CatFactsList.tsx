@@ -1,6 +1,6 @@
 import styles from './CatFactsList.module.scss'
 
-import { CatFactCard } from '../CatFactCard/CatFactCard'
+import { CatFactCard } from '@/entities/CatFactCard'
 
 export function CatFactsList() {
 	return (
