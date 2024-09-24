@@ -1,17 +1,23 @@
 @import '@styles/mixins.scss';
 
+.section {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	gap: 20px;
+}
+
 .card {
 	display: flex;
-	flex-wrap: wrap;
-	background-color: transparent;
+	background-color: #bdbbb0;
 	border-radius: 12px;
 	border: 1px solid #333;
 	overflow: hidden;
+	max-width: 580px;
+	gap: 2px;
 
-	.button {
-		background-color: #f7f2f0;
-		border: 1px solid #333;
-		border-radius: 12px;
+	.regenerate_button {
 		font-size: 14px;
 		padding: 4px 10px;
 		margin-top: auto;
@@ -25,11 +31,44 @@
 
 	img {
 		height: auto;
+		object-fit: contain;
 	}
+}
 
-	@include media1200 {
+.button {
+	background-color: #f7f2f0;
+	border: 1px solid #333;
+	border-radius: 12px;
+}
+
+.arrow {
+	font-size: 20px;
+	padding: 4px 10px;
+	transition: background-color 0.3s ease 0s;
+
+	&:hover,
+	&:focus-visible {
+		background-color: #9c7464cc;
+	}
+}
+
+@include media1200 {
+	.card {
+		flex-wrap: wrap;
+
 		img {
 			width: 200px;
 		}
+	}
+}
+
+@include media768 {
+	.section {
+		flex-wrap: wrap;
+		gap: 5px 20px;
+	}
+
+	.arrow {
+		order: 1;
 	}
 }
