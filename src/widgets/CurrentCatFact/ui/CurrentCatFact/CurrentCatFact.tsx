@@ -1,6 +1,7 @@
 'use client'
 
 import styles from './CurrentCatFact.module.scss'
+import { useState } from 'react'
 import Image from 'next/image'
 import clsx from 'clsx'
 
@@ -10,10 +11,17 @@ import { CatFactCard } from '@/entities/CatFactCard/ui/CatFactCard/CatFactCard'
 import { Loader } from '@/shared/ui/Loader'
 
 export function CurrentCatFact() {
-	const { data, isLoading, mutate } = useGenerateFact()
+	const [fact, setFact] = useState('')
+	const { data, isLoading, mutate, getPreviewFact } = useGenerateFact({
+		onSuccess: (fact) => setFact(fact.fact),
+	})
 
-	const handleRegenerate = () => mutate()
-	const handlePrevFact = () => {}
+	const handleRegenerate = () => mutate?.()
+	const handlePrevFact = () => {
+		const previewFact = getPreviewFact()
+		console.log(previewFact)
+		previewFact && setFact(previewFact)
+	}
 	const handleNextFact = () => {
 		handleRegenerate()
 	}
@@ -28,7 +36,7 @@ export function CurrentCatFact() {
 				{'<'}
 			</button>
 			<div className={styles.card}>
-				<CatFactCard body={data.fact} className={styles.card}>
+				<CatFactCard body={fact} className={styles.card}>
 					<button
 						className={clsx(styles.button, styles.regenerate_button)}
 						onClick={handleRegenerate}
