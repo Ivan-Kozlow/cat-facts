@@ -12,14 +12,13 @@ import { Loader } from '@/shared/ui/Loader'
 
 export function CurrentCatFact() {
 	const [fact, setFact] = useState('')
-	const { data, isLoading, mutate, getPreviewFact } = useGenerateFact({
+	const { isLoading, mutate, getPreviewFact } = useGenerateFact({
 		onSuccess: (fact) => setFact(fact.fact),
 	})
 
 	const handleRegenerate = () => mutate?.()
 	const handlePrevFact = () => {
 		const previewFact = getPreviewFact()
-		console.log(previewFact)
 		previewFact && setFact(previewFact)
 	}
 	const handleNextFact = () => {
@@ -27,8 +26,7 @@ export function CurrentCatFact() {
 	}
 
 	if (isLoading) return <Loader />
-	if (!data) return null
-
+	if (!fact) return null
 	return (
 		<section className={styles.section}>
 			<h2 className='visually-hidden'>Current Fact</h2>

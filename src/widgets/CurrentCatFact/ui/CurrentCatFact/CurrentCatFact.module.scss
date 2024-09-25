@@ -39,6 +39,11 @@
 	background-color: #f7f2f0;
 	border: 1px solid #333;
 	border-radius: 12px;
+
+	&:disabled {
+		pointer-events: none;
+		opacity: 0.5;
+	}
 }
 
 .arrow {

@@ -1,0 +1,26 @@
+.rc-pagination {
+	display: flex;
+	gap: 5px;
+	cursor: pointer;
+
+	&-item {
+		background-color: #eee;
+		color: #633a15;
+		border-radius: 50%;
+		width: 40px;
+		height: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&:hover {
+			background-color: #f7f2f0;
+		}
+
+		&-active {
+			font-weight: 600;
+			border: 1px solid #633a15;
+			background-color: #fff;
+		}
+	}
+}

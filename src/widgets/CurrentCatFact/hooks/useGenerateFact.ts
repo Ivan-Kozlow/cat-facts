@@ -1,5 +1,3 @@
-import { useCallback } from 'react'
-
 import { IRandomFactResponse } from '@/shared/services/catFacts/types'
 import { CatService } from '@/shared/services/catFacts/catFacts.service'
 import { QUERY_KEYS } from '@/shared/constants/queryKeys'
@@ -20,16 +18,14 @@ export const useGenerateFact = (props?: TypeProps): TypeReturn => {
 	const getPreviewFact = () => {
 		const facts = Array.from(requestsIdSet)
 		facts.length > 1 && requestsIdSet.delete(facts.at(-1)!)
-		console.log('return', facts.at(previewFact))
 		return facts.at(previewFact) || null
 	}
 
-	const response = useSWR<IRandomFactResponse>(QUERY_KEYS.RANDOM_FACT, () => CatService.getRandomFact(), {
+	const response = useSWR(QUERY_KEYS.RANDOM_FACT, () => CatService.getRandomFact(), {
 		errorRetryCount: 2,
 		...props,
 		onSuccess(data, key, config) {
 			requestsIdSet.add(data.fact)
-			console.log('Set: ', requestsIdSet)
 			props?.onSuccess?.(data, key, config)
 		},
 	})
